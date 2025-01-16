@@ -29,17 +29,24 @@ o.signcolumn = "yes"
 o.colorcolumn = "80"
 
 keymap.set("n", "<leader>pv", vim.cmd.Ex)
+keymap.set("n", "<leader>q", "<cmd>q<cr>")
+keymap.set("n", "<leader>w", "<cmd>w<cr>")
 
 keymap.set("n", "<leader>P","<cmd>Lazy<cr>", opts)
 
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-keymap.set("n", "<leader>p", "\"_dP")
+-- keep the current selection by pasting using leader + p
+keymap.set("x", "<leader>p", "\"_dP")
 
+-- copy to the system clipboard
 keymap.set({"n", "v"}, "<leader>y", "\"+y")
 keymap.set("n", "<leader>Y", "\"+Y")
 
+-- delete into the system clipboard
+keymap.set("n", "<leader>d", "\"_d")
+keymap.set("v", "<leader>d", "\"_d")
 
 
 

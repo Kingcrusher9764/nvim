@@ -21,6 +21,8 @@ local lsp_attach = function(client, bufnr)
   vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 
   lsp.buffer_autoformat()
+  vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
+
   lsp.default_keymaps({buffer=bufnr})
 end
 
@@ -31,6 +33,11 @@ lsp.extend_lspconfig({
 
 lspconfig.ts_ls.setup({})
 lspconfig.pyright.setup({})
+lspconfig.gopls.setup{}
+lspconfig.templ.setup{}
+lspconfig.emmet_language_server.setup{
+    filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact", "templ" }
+}
 
 -- autocompletion setup
 cmp.setup({
@@ -40,7 +47,7 @@ cmp.setup({
   snippet = {
     expand = function(args)
       -- You need Neovim v0.10 to use vim.snippet
-      vim.snippet.expand(args.body)
+      require('luasnip').lsp_expand(args.body)
     end,
   },
   mapping = cmp.mapping.preset.insert({}),
