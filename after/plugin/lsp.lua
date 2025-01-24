@@ -38,6 +38,7 @@ lspconfig.templ.setup{}
 lspconfig.emmet_language_server.setup{
     filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact", "templ" }
 }
+-- install all server using mason if lsp is not working
 
 -- autocompletion setup
 cmp.setup({

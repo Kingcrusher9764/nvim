@@ -16,3 +16,4 @@ keymap.set("n", "<C-l>", function() ui.nav_file(2) end)
 -- keymap.set("n", "<leader>k", function() ui.nav_file(3) end)
 -- keymap.set("n", "<leader>l", function() ui.nav_file(4) end)
 
+
