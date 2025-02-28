@@ -35,6 +35,7 @@ lspconfig.ts_ls.setup({})
 lspconfig.pyright.setup({})
 lspconfig.gopls.setup{}
 lspconfig.templ.setup{}
+lspconfig.angularls.setup{ "ngserver", "--stdio", "--tsProbeLocations", "", "--ngProbeLocations", "", "--angularCoreVersion", "" }
 lspconfig.emmet_language_server.setup{
     filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact", "templ" }
 }
